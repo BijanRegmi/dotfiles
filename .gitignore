@@ -23,4 +23,4 @@ dwm/dwm.o
 dwm/util.o
 
 # Neovim installed plugins
-nvim/autoload
+nvim/plugin
