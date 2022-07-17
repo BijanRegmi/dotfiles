@@ -16,6 +16,8 @@ keymap('i', "<A-j>", "<Esc>:m .+1<CR>==gi", options) -- Move line down
 keymap('i', "<A-k>", "<Esc>:m .-2<CR>==gi", options) -- Move line up
 keymap('v', "<A-j>", ":m '>+1<CR>gv=gv", options) -- Move block of lines down
 keymap('v', "<A-k>", ":m '<-2<CR>gv=gv", options) -- Move block of lines up
+keymap('n', 'xx', '"_dd', options) -- Delete without copying to register
+keymap('v', 'x', '"_d', options)
 
 -- Buffer
 keymap('n', "<C-n>", ":BufferLineCycleNext<CR>", options) -- Go to next buffer
@@ -54,6 +56,7 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", options) -- Reduce column si
 keymap('n', "<C-e>", ":NvimTreeFocus<CR>", options)
 keymap('n', "<C-b>", ":NvimTreeToggle<CR>", options)
 keymap('n', "<C-f>", ":Telescope find_files<CR>", options)
+keymap('n', "<C-g>", ":Telescope live_grep<CR>", options)
 
 -- Git
 keymap('n', "gbl", ":Gitsigns blame_line<CR>", options)
@@ -66,3 +69,7 @@ keymap('n', "grh", ":Gitsigns reset_hunk<CR>", options)
 keymap('n', "grb", ":Gitsigns reset_buffer<CR>", options)
 keymap('n', "guh", ":Gitsigns undo_stage_hunk<CR>", options)
 keymap('n', "gsb", ":Gitsigns stage_buffer<CR>", options)
+
+-- Formatter
+keymap('n', "<leader>f", "<Cmd>lua vim.lsp.buf.formatting()<CR>", options)
+keymap('v', "<leader>f", "<Cmd>lua vim.lsp.buf.range_formatting()<CR>", options)

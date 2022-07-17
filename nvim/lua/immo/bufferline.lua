@@ -13,7 +13,7 @@ require('bufferline').setup {
         left_trunc_marker = '',
         right_trunc_marker = '',
         name_formatter = function(buf)
-            return vim.fn.fnamemodify(buf.name, ':p:~')
+            return vim.fn.fnamemodify(buf.path, ':p:.')
         end,
         max_name_length = 40,
         max_prefix_length = 15,
@@ -24,10 +24,8 @@ require('bufferline').setup {
             return "(" .. count .. ")"
         end,
         offsets = {{
-            filetype = "nerdtree",
-            text = function()
-                return vim.fn.fnamemodify(vim.fn.getcwd(), ':p:~')
-            end,
+            filetype = "NvimTree",
+            text = "Explorer",
             text_align = "center"
         }},
         color_icons = true,

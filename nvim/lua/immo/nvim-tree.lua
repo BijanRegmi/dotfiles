@@ -34,7 +34,7 @@ require("nvim-tree").setup({
   },
   renderer = {
     group_empty = true,
-    root_folder_modifier = ":p:~",
+    root_folder_modifier = ":p",
     icons = {
       show = {
         file = true,

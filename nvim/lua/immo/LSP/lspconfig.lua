@@ -1,7 +1,7 @@
 local lsp_config = require("lspconfig")
 local lsp_installer = require("nvim-lsp-installer")
 
-local servers = {'tsserver'}
+local servers = {'bashls', 'clangd', 'cmake', 'cssls', 'eslint', 'html', 'jsonls', 'marksman', 'pyright', 'tsserver'}
 
 -- LSP Installer
 lsp_installer.setup({
